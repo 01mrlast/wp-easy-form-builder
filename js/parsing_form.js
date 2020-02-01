@@ -1,11 +1,9 @@
 
 function funParsing(tag_obj){
+    
     var html;
-    console.log('type is :'+typeof  tag_obj);
-    console.log(tag_obj.toString());
     for (let i=0 ; i<tag_obj.length ; i++)
-    {
-
+    {   
         console.log(tag_obj);
         switch(tag_obj[i].type)
         {
@@ -23,11 +21,13 @@ function funParsing(tag_obj){
             case 'button':
                 console.log('button');
                 html+=`
-               `
+                <button name="${tag_obj[i].name}" type="submit" class="btn ${tag_obj[i].class}" id="${tag_obj[i].tagId}>${tag_obj[i].value}</button>`
             break;            
             case 'date':
                     console.log('date');
-                    html+=``;
+                    html+=`<div class="form-group">
+                    <label class="control-label ${tag_obj[i].tagId}" id="${tag_obj[i].tagId}">${tag_obj[i].label}</label>
+                    <input type="date" name="" class="form-control ${tag_obj[i].tagId}" id="${tag_obj[i].tagId}" ${tag_obj[i].required}/></div>`;
             break;            
             case 'textarea':
                     console.log('textarea');
@@ -68,7 +68,10 @@ function funParsing(tag_obj){
             case 'text':
                     console.log('text');
                     html+=`
-                    
+                    <div class="form-group">
+                    <label class="control-label ${tag_obj[i].tagId}" id="${tag_obj[i].tagId}">${tag_obj[i].label}</label>
+                    <input type="text" name="${tag_obj[i].name}" placeholder="${tag_obj[i].placeholder}" class="form-control" ${tag_obj[i].required} id="${tag_obj[i].tagId}"/>
+                    </div>
                     `;
             break;            
         }
