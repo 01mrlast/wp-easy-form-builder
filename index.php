@@ -369,7 +369,11 @@ Your Message Submited
         var_dump($someArray);
 
 
-        echo "<hr>";
+        echo "<hr><br><br>";
+ 
+
+
+
 foreach ($someArray as $key => $value) {
 	   // echo $value["label"] . "<br>";
 	$str ='';
@@ -392,13 +396,14 @@ foreach ($someArray as $key => $value) {
 
 
 		$motaghaierdige = $someArray.$value['option'];
+       // var_dump($someArray.$value['option'][0]);
+         foreach($value->option as $date)
+         {
+              echo $date "\n";
+         }
 
 
-
-
-
-
-		
+		//$someArray[0]['option'][0]['id']
 
 
 
